@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevHub | CSC325</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #071426, #0a2545, #063b66);
+        color: #ffffff;
+        min-height: 100vh;
+        padding: 30px;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1100px;
+        margin: 0 auto 80px;
+    }
+    .logo {
+        font-size: 26px;
+        font-weight: bold;
+        background: linear-gradient(90deg, #38bdf8, #2563eb);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    nav a {
+        color: #cbd5e1;
+        text-decoration: none;
+        margin-left: 25px;
+        transition: 0.3s;
+    }
+    nav a:hover {
+        color: #a78bfa;
+    }
+    .container {
+        max-width: 1100px;
+        margin: auto;
+    }
+    .hero {
+        padding: 65px 50px;
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 25px;
+        background: rgba(255,255,255,0.07);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        margin-bottom: 35px;
+        animation: fadeIn 1s ease;
+    }
+    .badge {
+        display: inline-block;
+        background: rgba(56,189,248,0.15);
+        color: #38bdf8;
+        padding: 9px 16px;
+        border-radius: 30px;
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+    h1 {
+        font-size: clamp(38px, 6vw, 64px);
+        margin-bottom: 20px;
+        line-height: 1.1;
+    }
+    h1 span {
+        background: linear-gradient(90deg, #38bdf8, #2563eb);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+        color: #cbd5e1;
+        font-size: 17px;
+        line-height: 1.8;
+        max-width: 650px;
+        margin-bottom: 30px;
+    }
+    .button {
+        display: inline-block;
+        padding: 13px 25px;
+        border-radius: 10px;
+        background: linear-gradient(90deg, #2563eb, #06b6d4);
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(139,92,246,0.4);
+    }
+    .section-title {
+        font-size: 24px;
+        margin: 45px 0 20px;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.12);
+        padding: 25px;
+        border-radius: 18px;
+        transition: 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-6px);
+        background: rgba(255,255,255,0.12);
+    }
+    .card h3 {
+        margin-bottom: 12px;
+        color: #a78bfa;
+    }
+    .card p {
+        color: #cbd5e1;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+    .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #4ade80;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    .status-dot {
+        width: 9px;
+        height: 9px;
+        background: #4ade80;
+        border-radius: 50%;
+        box-shadow: 0 0 12px #4ade80;
+    }
+    footer {
+        text-align: center;
+        margin-top: 80px;
+        padding: 25px;
+        color: #94a3b8;
+        font-size: 13px;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @media (max-width: 600px) {
+        header {
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        nav a {
+            margin: 0 8px;
+        }
+        .hero {
+            padding: 35px 25px;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">DevHub.</div>
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/api/">API</a>
+</nav>
+</header>
+<main class="container">
+<section class="hero">
+    <div class="badge">CSC325 • SOFTWARE ENGINEERING</div>
+    <h1>Building the future,<br>
+        one <span>commit</span> at a time.
+    </h1>
+    <p>
+        Welcome to DevHub, a Django-powered project exploring
+        modern backend development, REST APIs, automated testing,
+        and continuous integration and deployment.
+    </p>
+    <a href="/api/" class="button">Explore the API →</a>
+    <div class="status">
+        <span class="status-dot"></span>
+        Application Online
+    </div>
+</section>
+<h2 class="section-title">Project Overview</h2>
+<section class="cards">
+    <div class="card">
+        <h3>⚡ Backend</h3>
+        <p>
+            Powered by Python and Django, providing the foundation
+            for a reliable web application.
+        </p>
+    </div>
+    <div class="card">
+        <h3>🔌 REST API</h3>
+        <p>
+            Django REST Framework delivers structured JSON
+            responses through API endpoints.
+        </p>
+    </div>
+    <div class="card">
+        <h3>🧪 Automated Testing</h3>
+        <p>
+            Automated tests help verify functionality and catch
+            problems before deployment.
+        </p>
+    </div>
+    <div class="card">
+        <h3>🚀 CI/CD Pipeline</h3>
+        <p>
+            GitHub Actions automates setup, dependency installation,
+            testing, and deployment.
+        </p>
+    </div>
+</section>
+</main>
+<footer>
+    DevHub © 2026 | Built with Django & Django REST Framework
+    <br><br>
+    CSC325 Software Engineering Project
+</footer>
+</body>
+</html>

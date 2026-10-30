@@ -1,1 +1,21 @@
-myvm
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+myvm/
+venv/
+
+# Django database
+db.sqlite3
+
+# Environment variables and secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Generated static files
+staticfiles/

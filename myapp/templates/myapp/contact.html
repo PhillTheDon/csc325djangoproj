@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | DevHub</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #071426, #0a2545, #063b66);
+        color: white;
+        min-height: 100vh;
+        padding: 30px;
+    }
+    header {
+        max-width: 1100px;
+        margin: 0 auto 65px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        font-size: 26px;
+        font-weight: bold;
+        background: linear-gradient(90deg, #38bdf8, #2563eb);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    nav a {
+        color: #cbd5e1;
+        text-decoration: none;
+        margin-left: 22px;
+    }
+    nav a:hover {
+        color: #38bdf8;
+    }
+    main {
+        max-width: 750px;
+        margin: auto;
+    }
+    .panel {
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 24px;
+        padding: 45px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .badge {
+        display: inline-block;
+        background: rgba(37,99,235,0.2);
+        color: #38bdf8;
+        padding: 9px 16px;
+        border-radius: 25px;
+        margin-bottom: 22px;
+        font-size: 13px;
+    }
+    h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+    h1 span {
+        color: #38bdf8;
+    }
+    .description {
+        color: #cbd5e1;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+    label {
+        display: block;
+        margin: 18px 0 8px;
+        color: #cbd5e1;
+        font-size: 14px;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 14px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.15);
+        background: rgba(0,0,0,0.2);
+        color: white;
+        font-family: inherit;
+        font-size: 15px;
+        outline: none;
+    }
+    input:focus, textarea:focus {
+        border-color: #38bdf8;
+        box-shadow: 0 0 10px rgba(56,189,248,0.2);
+    }
+    textarea {
+        min-height: 140px;
+        resize: vertical;
+    }
+    button {
+        margin-top: 25px;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(90deg, #2563eb, #06b6d4);
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(37,99,235,0.4);
+    }
+    .back {
+        display: inline-block;
+        margin-top: 25px;
+        color: #38bdf8;
+        text-decoration: none;
+    }
+    .success {
+        background: rgba(34,197,94,0.15);
+        border: 1px solid rgba(34,197,94,0.4);
+        color: #86efac;
+        padding: 14px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    footer {
+        text-align: center;
+        margin-top: 65px;
+        color: #94a3b8;
+        font-size: 13px;
+    }
+    @media (max-width: 600px) {
+        header {
+            flex-direction: column;
+            gap: 20px;
+        }
+        nav a {
+            margin: 0 7px;
+        }
+        .panel {
+            padding: 28px 20px;
+        }
+        h1 {
+            font-size: 34px;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">DevHub.</div>
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/api/">API</a>
+</nav>
+</header>
+<main>
+    <section class="panel">
+    <div class="badge">GET IN TOUCH</div>
+    <h1>Let's start a <span>conversation.</span></h1>
+    <p class="description">
+        Have a question about DevHub? Send a message using the
+        form below.
+    </p>
+    {% if submitted %}
+        <div class="success">
+            Your message was submitted successfully!
+        </div>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name"
+               placeholder="Enter your name" required>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email"
+               placeholder="Enter your email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message"
+                  placeholder="Write your message here..."
+                  required></textarea>
+        <button type="submit">Send Message →</button>
+    </form>
+    <a href="/" class="back">← Back to Dashboard</a>
+</section>
+</main>
+<footer>
+    DevHub © 2026 | CSC325 Software Engineering Project
+</footer>
+</body>
+</html>
