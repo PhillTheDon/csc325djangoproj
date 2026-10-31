@@ -32,7 +32,8 @@ def api_home(request):
     data = {
         "message": "Welcome to my CSC325 Django API!",
         "project": "CSC325 CI/CD Project",
-        "status": "running"
+        "status": "running",
+        "version": "1.1"
     }
 
     return Response(data)
