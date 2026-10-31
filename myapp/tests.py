@@ -41,3 +41,4 @@ class APIHomeTests(APITestCase):
             'CSC325 CI/CD Project'
         )
         self.assertEqual(response.data['status'], 'running')
+        self.assertEqual(response.data['version'], '1.1')
